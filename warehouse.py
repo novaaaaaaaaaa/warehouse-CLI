@@ -28,8 +28,14 @@ class Warehouse:
 
 
     def print_stock_list(self):
-        for item in self.stock_items:
-            print(item.__str__())
+        sort_type = input('Enter how you would like results sorted by ID, asc for ascending and dsc for descending: ').lower()
+
+        if sort_type == 'asc':
+            for item in self.stock_items:
+                print(item.__str__())
+        elif sort_type == 'dsc':
+            for item in self.stock_items[::-1]:
+                print(item.__str__())
 
     def write_stock_to_file(self):
         try:
@@ -65,7 +71,7 @@ class Warehouse:
 
                 self.create_stock_item(stock_name, stock_desc, stock_price)
 
-        open_file.close()
+            open_file.close()
 
 
     def create_customer_item(self, fname, sname, address):
@@ -86,8 +92,14 @@ class Warehouse:
 
 
     def print_customer_list(self):
-        for item in self.customer_records:
-            print(item.__str__())
+        sort_type = input('Enter how you would like results sorted by ID, asc for ascending and dsc for descending: ').lower()
+
+        if sort_type == 'asc':
+            for item in self.customer_records:
+                print(item.__str__())
+        elif sort_type == 'dsc':
+            for item in self.customer_records[::-1]:
+                print(item.__str__())
 
     def write_customer_to_file(self):
         try:
@@ -123,7 +135,7 @@ class Warehouse:
 
                 self.create_customer_item(customer_fname, customer_sname, customer_address)
 
-        open_file.close()
+            open_file.close()
 
         
 
@@ -131,16 +143,16 @@ class Warehouse:
 if __name__ == '__main__':
     new_warehouse = Warehouse()
 
-    # new_warehouse.create_stock_item('carrot', 'vegetable', 0.99)
-    # new_warehouse.create_stock_item('potato', 'vegetable', 0.99)
-    # new_warehouse.create_stock_item('asparagus', 'vegetable', 0.99)
-    # new_warehouse.create_stock_item('swede', 'vegetable', 0.99)
+    new_warehouse.create_stock_item('carrot', 'vegetable', 0.99)
+    new_warehouse.create_stock_item('potato', 'vegetable', 0.99)
+    new_warehouse.create_stock_item('asparagus', 'vegetable', 0.99)
+    new_warehouse.create_stock_item('swede', 'vegetable', 0.99)
 
-    # new_warehouse.print_stock_list()
+    new_warehouse.print_stock_list()
 
-    # new_warehouse.write_stock_to_file()
+    new_warehouse.write_stock_to_file()
 
-    # new_warehouse.read_stock_from_file()
+    new_warehouse.read_stock_from_file()
 
     new_warehouse.create_customer_item('Jim', 'Jones', '14 test st')
     new_warehouse.create_customer_item('Tim', 'Jones', '14 test st')

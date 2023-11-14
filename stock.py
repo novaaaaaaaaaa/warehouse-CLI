@@ -10,7 +10,7 @@ class Stock:
 
     def __str__(self):
         return f'{self.stockid},{self.name},{self.description},{self.price}'
-'''
+
     def get_id(self):
         return self.stockid
 
@@ -34,7 +34,7 @@ class Stock:
     
     def set_price(self, new_price):
         self.price = float(new_price)
-'''
+
     
     
 def main():
