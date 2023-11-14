@@ -73,6 +73,19 @@ class Warehouse:
 
             open_file.close()
 
+    def search_stock_item(self):
+        search_item = int(input('Enter the ID of the stock item you are looking for: '))
+        found = False
+
+        for item in self.stock_items:
+            if item.stockid == search_item:
+                print(item.__str__())
+                found = True
+                break
+        
+        if found == False:
+            print('ITEM RECORD DOES NOT EXIST')
+
 
     def create_customer_item(self, fname, sname, address):
         duplicate = True
@@ -136,6 +149,19 @@ class Warehouse:
                 self.create_customer_item(customer_fname, customer_sname, customer_address)
 
             open_file.close()
+
+    def search_customer_item(self):
+        search_item = int(input('Enter the ID of the stock item you are looking for: '))
+        found = False
+
+        for item in self.customer_records:
+            if item.customerid == search_item:
+                print(item.__str__())
+                found = True
+                break
+
+        if found == False:
+            print('CUSTOMER RECORD NOT FOUND')
 
         
 

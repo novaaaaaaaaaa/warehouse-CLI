@@ -31,8 +31,9 @@ def menu():
     1. Create stock item
     2. Print out stock items
     3. Write new items to file
-    4. Exit to main menu
-    5. Exit system''')
+    4. Search for stock item
+    5. Exit to main menu
+    6. Exit system''')
             
             choice2 = input('Enter your choice: ')
 
@@ -50,9 +51,12 @@ def menu():
                 new_warehouse.write_stock_to_file()
 
             elif choice2 == '4':
-                break
+                new_warehouse.search_stock_item()
 
             elif choice2 == '5':
+                break
+
+            elif choice2 == '6':
                 exit()
             
         while choice1 == '2':
@@ -60,8 +64,9 @@ def menu():
     1. Create customer record
     2. Print out customer records
     3. Write new records to file
-    4. Exit to main menu
-    5. Exit system''')
+    4. Search for customer record
+    5. Exit to main menu
+    6. Exit system''')
             
             choice2 = input('Enter your choice: ')
 
@@ -79,9 +84,12 @@ def menu():
                 new_warehouse.write_customer_to_file()
 
             elif choice2 == '4':
-                break
+                new_warehouse.search_customer_item()
 
             elif choice2 == '5':
+                break
+
+            elif choice2 == '6':
                 exit()
             
         while choice1 == '3':
